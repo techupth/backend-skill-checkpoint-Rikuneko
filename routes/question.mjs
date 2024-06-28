@@ -96,7 +96,7 @@ questionRouter.get("/:questionId", async (req, res) => {
   });
 });
 
-questionRouter.put("/:questionId", async (req, res) => {
+questionRouter.put("/:questionId", [validateCreateQuestionData], async (req, res) => {
   // ลอจิกในการแก้ไขข้อมูลโพสต์ด้วย Id ในระบบ
 
   // 1) Access ตัว Endpoint Parameter ด้วย req.params
